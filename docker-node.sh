@@ -9,5 +9,7 @@ test $# -gt 0 && goal="$@"
 exec docker run -i ${tty_option} --rm \
   -v "$PWD":/usr/src \
   -w /usr/src \
+  --privileged \
+  --cap-add=SYS_ADMIN \
   dukecon/dukecon-node:latest \
   /bin/sh -c "${goal}"
