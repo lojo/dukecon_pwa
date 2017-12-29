@@ -17,6 +17,11 @@ pipeline {
         sh './docker-node.sh'
       }
     }
+    stage('Integration Test') {
+      steps {
+        sh './docker-node.sh xvfb-run -a -e xvfb.err -s "\'-screen 0 2560x1440x8\'" -- npm run e2e_headless'
+      }
+    }
   }
   post {
     failure {
