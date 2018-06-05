@@ -80,7 +80,7 @@ function getConferenceId () {
 }
 
 function getEvents () {
-  axios.get(base + 'rest/conferences/' + getConferenceId())
+  axios.get(base + 'conference-data/' + getConferenceId() + '.json')
     .then(function (response) {
       response.data.events.forEach(v => {
         Vue.set(events, v.id, v)

@@ -30,13 +30,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+      '/conference-data': {
+        target: 'https://latest.dukecon.org',
+        changeOrigin: true,
+        ws: true
+      },
       '/rest': {
-        target: 'https://latest.dukecon.org/javaland/2018',
+        target: 'https://latest.dukecon.org/javaland/2016',
         changeOrigin: true,
         ws: true
       },
       '/img/favicon.ico': {
-        target: 'https://latest.dukecon.org/javaland/2018',
+        target: 'https://latest.dukecon.org/javaland/2016',
         changeOrigin: true,
         ws: true
       }
