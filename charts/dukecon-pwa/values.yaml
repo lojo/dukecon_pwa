@@ -4,7 +4,7 @@
 replicaCount: 1
 image:
   repository: 10.19.246.7:5000/dukecon-jx/dukecon-pwa
-  tag: 1.0.9
+  tag: 1.0.11
   pullPolicy: IfNotPresent
 service:
   name: dukecon-pwa
