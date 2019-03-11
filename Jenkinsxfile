@@ -6,6 +6,8 @@ pipeline {
     ORG = 'dukecon-jx'
     APP_NAME = 'dukecon-pwa'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
+    // Do not install Chromium dynamically
+    PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = 'true'
   }
   stages {
     stage('CI Build and push snapshot') {
