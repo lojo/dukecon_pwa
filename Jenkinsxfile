@@ -45,6 +45,9 @@ pipeline {
           sh "git config --global credential.helper store"
           sh "jx step git credentials"
 
+          // Install chromium to enable unit tests
+          sh "npm install -g appium --unsafe-perm=true --allow-root"
+
           // so we can retrieve the version in later steps
           sh "echo \$(jx-release-version) > VERSION"
           sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
