@@ -48,13 +48,13 @@ pipeline {
           sh "jx step git credentials"
 
           // Install chromium to enable unit tests
-          sh "npm install -g appium --unsafe-perm=true --allow-root"
+//          sh "npm install -g appium --unsafe-perm=true --allow-root"
 
           // so we can retrieve the version in later steps
           sh "echo \$(jx-release-version) > VERSION"
           sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
           sh "jx step tag --version \$(cat VERSION)"
-          sh 'mvn clean test'
+          sh 'mvn clean package -DskipTests' // test'
         }
       }
     }
