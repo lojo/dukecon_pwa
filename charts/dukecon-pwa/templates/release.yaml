@@ -1,0 +1,15 @@
+apiVersion: jenkins.io/v1
+kind: Release
+metadata:
+  creationTimestamp: "2019-08-17T14:58:34Z"
+  deletionTimestamp: null
+  name: '{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}'
+spec:
+  gitCloneUrl: https://github.com/dukecon-jx/dukecon_pwa.git
+  gitHttpUrl: https://github.com/dukecon-jx/dukecon_pwa
+  gitOwner: dukecon-jx
+  gitRepository: dukecon_pwa
+  name: '{{ .Chart.Name }}'
+  releaseNotesURL: https://github.com/dukecon-jx/dukecon_pwa/releases/tag/v1.0.36
+  version: v1.0.36
+status: {}
